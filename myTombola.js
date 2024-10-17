@@ -158,3 +158,12 @@ buttonEstrai.addEventListener('click', () => {
     markExtractedNumeber(`userCard${i}`, extractedNumber)
   }
 })
+
+//
+// Assegno l'eventListener al bottone "nuova partita"
+//
+const buttonRicomincia = document.getElementById('btnRicomincia')
+buttonRicomincia.addEventListener('click', () => {
+  // Ricarico la pagina
+  location.reload()
+})
