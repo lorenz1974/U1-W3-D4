@@ -1,6 +1,6 @@
 // **********************************************************
 //
-//                     FUNTIONS' DEFINITIONS
+//                     FUNCTIONS DEFINITION
 //
 // **********************************************************
 
@@ -59,8 +59,9 @@ const createUserCard = (cardNumber) => {
 
   // Genera 24 numeri casuali per la prima card dell'utente
   cellValues = []
-  cellValues = getNonRepeatingRandomNumbers(1, 24)
-  console.log(cellValues)
+  cellValues = getNonRepeatingRandomNumbers(1, 76)
+  cellValues = cellValues.slice(0, 24)
+  // console.log(cellValues)
 
   // Creo il div della card dell'utente
   let userCardContainer = document.createElement('div')
@@ -102,7 +103,7 @@ const markExtractedNumeber = (type, number) => {
 // generare in continuazione e poi dover controlalre se già estratti
 //
 const extractedNumbers = getNonRepeatingRandomNumbers(1, 76)
-console.log(extractedNumbers)
+// console.log(extractedNumbers)
 
 //
 // Intercetto il div del tabellone e creo il tabellone
@@ -118,24 +119,24 @@ for (let i = 1; i <= 76; i++) {
 createBoard('billBoard', cellValues, divTabellone)
 
 // Nasconde il bottono "estrai" finchè non vengono generate le card dell'utente
+// In questo modo non si possono estrarre numeri prima di aver creato le card utente
 document.getElementById('btnEstrai').style.display = 'none'
 
 //
 // Creo un numero di card in base al selettore
 // E poi lo disattivo per evitare che vengani rigenerate delle nuove card
+//
 const selectCardsNumber = document.getElementById('nCards')
 selectCardsNumber.addEventListener('change', () => {
-  // Svuoto il div delle card dell'utente (non ce ne sarebbe bisogno)
-  //userCards.getElementById('#userCards').innerHTML = ''
-
-  // Leggo il valore del selettore
+  // Leggo il valore del selettore e creo N card in base al valore
   let nCards = selectCardsNumber.value
-  console.log('nCards selected:', nCards)
+  //console.log('nCards selected:', nCards)
   for (let i = 1; i <= parseInt(nCards); i++) {
     createUserCard(i)
   }
 
   // Disattivo il selettore così che non possano essere generate nuove card
+  // e riattivo il pulsante Estrai così che si possa cominacire a giocare
   document.getElementById('numberOfCards').style.display = 'none'
   document.getElementById('btnEstrai').style.display = 'block'
 })
@@ -152,11 +153,13 @@ buttonEstrai.addEventListener('click', () => {
 
   // Estraggo un numero casuale partendo dalla fine (pop ritorna il numero estretto. Santo POP!!!)
   const extractedNumber = extractedNumbers.pop()
-  console.log(extractedNumber)
+  //console.log(extractedNumber)
 
-  // Evidenzio come estratto il DIV del numero corrispondente
+  // Cambio la classe al DIV del numero corrispondente a quello estratto
+  // ... Lo faccio sia sul tabellone...
   markExtractedNumeber('billBoard', extractedNumber)
   const selectCardsNumber = document.getElementById('nCards')
+  // ... sia su tutte le card dopo aver riletto il selettone (che ora è nascosto!)
   let nCards = selectCardsNumber.value
   for (let i = 1; i <= parseInt(nCards); i++) {
     markExtractedNumeber(`userCard${i}`, extractedNumber)
@@ -164,7 +167,7 @@ buttonEstrai.addEventListener('click', () => {
 })
 
 //
-// Assegno l'eventListener al bottone "nuova partita"
+// Assegno l'eventListener al bottone "Ricomincia"
 //
 const buttonRicomincia = document.getElementById('btnRicomincia')
 buttonRicomincia.addEventListener('click', () => {
