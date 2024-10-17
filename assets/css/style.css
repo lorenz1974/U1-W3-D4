@@ -1,0 +1,155 @@
+body {
+  height: 120vh;
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 1.2rem;
+  margin: 1rem;
+  padding: 1rem;
+
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    22deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  background-attachment: fixed;
+}
+footer {
+  text-align: center;
+  margin: 2rem;
+}
+
+footer a {
+  font-size: 0.9rem;
+  color: #ff00db;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+label,
+button {
+  font-weight: bold;
+  display: block;
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 1rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form {
+  text-align: center;
+  padding: 0;
+  margin: 0, 2rem;
+}
+
+input[type='text'] {
+  font-size: 1.2rem;
+  width: 80%;
+}
+
+h1,
+h2,
+h3,
+th,
+p {
+  color: #333;
+  font-weight: bold;
+  margin: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+h1 > i {
+  margin-left: 1rem;
+  color: #ff00db;
+}
+h2 {
+  margin-top: 0;
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+p,
+li {
+  text-align: left;
+  font-size: 1rem;
+  margin: 1rem;
+  list-style: inside;
+}
+
+div {
+  margin: 1rem;
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+#container {
+  max-width: 1024px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 20px;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+#instructions {
+  margin-top: 2rem;
+  background-color: #f2f2f2;
+  text-align: left;
+  padding: 1rem;
+}
+
+.inlineBlock {
+  display: inline-block;
+}
+
+#tabellone {
+  width: 700px;
+  border: 1px solid #ccc;
+}
+
+#extractionHistory {
+  vertical-align: top;
+  width: 200px;
+  border: 1px solid #ccc;
+}
+
+.numberCell {
+  margin: 5px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  border: 1px solid #ff00db;
+}
+
+.numberCell h3 {
+  text-align: center;
+  font-size: 20px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+.extractedNumber {
+  background: linear-gradient(black, white);
+}
+.extractedNumber > h3 {
+  color: white;
+}
