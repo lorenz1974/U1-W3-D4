@@ -152,7 +152,7 @@ buttonEstrai.addEventListener('click', () => {
   }
 
   // Estraggo un numero casuale partendo dalla fine (pop ritorna il numero estretto. Santo POP!!!)
-  const extractedNumber = extractedNumbers.pop()
+  const extractedNumber = extractedNumbers.shift() /// vado con shift di cui mi ero dimenticato
   //console.log(extractedNumber)
 
   // Cambio la classe al DIV del numero corrispondente a quello estratto
