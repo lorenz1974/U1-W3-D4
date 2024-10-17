@@ -117,6 +117,9 @@ for (let i = 1; i <= 76; i++) {
 //console.log(divTabellone)
 createBoard('billBoard', cellValues, divTabellone)
 
+// Nasconde il bottono "estrai" finchè non vengono generate le card dell'utente
+document.getElementById('btnEstrai').style.display = 'none'
+
 //
 // Creo un numero di card in base al selettore
 // E poi lo disattivo per evitare che vengani rigenerate delle nuove card
@@ -134,6 +137,7 @@ selectCardsNumber.addEventListener('change', () => {
 
   // Disattivo il selettore così che non possano essere generate nuove card
   document.getElementById('numberOfCards').style.display = 'none'
+  document.getElementById('btnEstrai').style.display = 'block'
 })
 
 //
